@@ -1,0 +1,15 @@
+{
+  "name": "soulcatcher-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "tsc && electron ."
+  },
+  "author": "Koen Kamman",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^7.1.5",
+    "typescript": "^3.7.3"
+  }
+}
