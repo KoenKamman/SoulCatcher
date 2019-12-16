@@ -1,5 +1,5 @@
 import { app, BrowserWindow, ipcMain, IpcMainEvent } from 'electron';
-import path = require('path');
+import path from 'path';
 
 let win: BrowserWindow | null;
 
@@ -7,15 +7,26 @@ function createWindow() {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
     webPreferences: {
       nodeIntegration: false,
+      enableRemoteModule: false,
       preload: path.join(app.getAppPath(), 'dist/preload.js')
     }
   });
 
+  win.removeMenu();
+
   win.loadFile('./app/index.html');
 
   win.webContents.openDevTools();
+
+  win.on('maximize', () => {
+    win?.webContents.send('window-maximized', true);
+  });
+  win.on('unmaximize', () => {
+    win?.webContents.send('window-maximized', false);
+  });
 
   win.on('closed', () => {
     win = null;
@@ -38,6 +49,8 @@ app.on('activate', () => {
   }
 });
 
-ipcMain.on('ping', (event: IpcMainEvent): void => {
-  event.reply('pong');
+app.on('web-contents-created', (eventa, contents) => {
+  contents.on('new-window', async (eventb) => {
+    eventb.preventDefault();
+  });
 });

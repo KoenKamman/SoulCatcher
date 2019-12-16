@@ -1,0 +1,26 @@
+$non-draggable-border: 4px;
+
+.container {
+    background-color: #292929;
+    -webkit-user-select: none;
+    color: #fff;
+}
+
+.draggable-area {
+    -webkit-app-region: drag;
+    margin: $non-draggable-border 0 0 $non-draggable-border;
+}
+
+.draggable-area-maximized {
+    margin: 0;
+    padding: $non-draggable-border 0 0 $non-draggable-border;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.btn:hover {
+    background-color: #414141;
+    cursor: pointer;
+}

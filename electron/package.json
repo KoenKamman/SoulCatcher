@@ -11,5 +11,8 @@
   "devDependencies": {
     "electron": "^7.1.5",
     "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "chokidar": "^3.3.0"
   }
 }
