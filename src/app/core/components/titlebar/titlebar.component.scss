@@ -1,26 +1,55 @@
-$non-draggable-border: 4px;
+$titlebar-height: 30px;
+$resizer-border: 4px;
+$titlebar-color: #313131;
+$icon-padding: 7px;
 
-.container {
-    background-color: #292929;
+:host {
+    height: $titlebar-height;
+    display: block;
     -webkit-user-select: none;
     color: #fff;
+    line-height: $titlebar-height;
 }
 
 .draggable-area {
+    top: $resizer-border;
+    left: $resizer-border;
+    right: $resizer-border;
+    display: block;
+    position: absolute;
+    height: $titlebar-height - $resizer-border;
     -webkit-app-region: drag;
-    margin: $non-draggable-border 0 0 $non-draggable-border;
 }
 
 .draggable-area-maximized {
-    margin: 0;
-    padding: $non-draggable-border 0 0 $non-draggable-border;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $titlebar-height;
+}
+
+.container {
+    background-color: $titlebar-color;
+}
+
+.logo {
+    height: $titlebar-height;
+    width: $titlebar-height;
 }
 
 .btn {
-    padding: 5px;
+    height: $titlebar-height;
+    width: $titlebar-height;
+    z-index: 1000;
+
+    &:hover {
+        background-color: lighten($titlebar-color, 10%);
+    }
 }
 
-.btn:hover {
-    background-color: #414141;
-    cursor: pointer;
+.icon {
+    padding: $icon-padding;
+    ::ng-deep svg {
+        display: block;
+    }
 }
