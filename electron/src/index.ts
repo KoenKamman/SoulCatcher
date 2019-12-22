@@ -11,8 +11,9 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       enableRemoteModule: false,
-      preload: path.join(app.getAppPath(), 'dist/preload.js')
-    }
+      preload: path.join(app.getAppPath(), 'dist/preload.js'),
+    },
+    icon: path.join(app.getAppPath(), 'assets/soulcatcher_logo.png')
   });
 
   win.removeMenu();

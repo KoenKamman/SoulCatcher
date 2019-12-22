@@ -2,18 +2,18 @@
 <div class="container" fxLayout="row">
     <div class="logo-container" fxFlex>
         <div class="logo">
-            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+            <div class="icon" [inlineSVG]="'/assets/icons/soulcatcher_icon.svg'"></div>
         </div>
     </div>
     <div class="window-controls" fxLayout="row" fxLayoutAlign="end" fxFlex>
         <div class="btn" (click)="sendControlEvent('minimize-window')">
-            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+            <div class="icon" [inlineSVG]="'/assets/icons/minimize_icon.svg'"></div>
         </div>
         <div class="btn" (click)="sendControlEvent('maximize-window')" *ngIf="!maximized">
-            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+            <div class="icon" [inlineSVG]="'/assets/icons/maximize_icon.svg'"></div>
         </div>
         <div class="btn" (click)="sendControlEvent('restore-window')" *ngIf="maximized">
-            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+            <div class="icon" [inlineSVG]="'/assets/icons/restore_icon.svg'"></div>
         </div>
         <div class="btn close-btn" (click)="sendControlEvent('close-window')">
             <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>

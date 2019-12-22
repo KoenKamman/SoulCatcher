@@ -1,7 +1,7 @@
 $titlebar-height: 30px;
 $resizer-border: 4px;
-$titlebar-color: #313131;
-$icon-padding: 7px;
+$titlebar-color: #252525;
+$icon-padding: 10px;
 
 :host {
     height: $titlebar-height;
@@ -35,6 +35,9 @@ $icon-padding: 7px;
 .logo {
     height: $titlebar-height;
     width: $titlebar-height;
+    .icon {
+        padding: 5px;
+    }
 }
 
 .btn {
@@ -42,6 +45,7 @@ $icon-padding: 7px;
     width: $titlebar-height;
     -webkit-app-region: no-drag;
     z-index: 1000;
+    padding: 0 5px 0 5px;
 
     &:hover {
         background-color: lighten($titlebar-color, 10%);

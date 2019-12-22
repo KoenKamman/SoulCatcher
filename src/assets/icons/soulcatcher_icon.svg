@@ -1,0 +1,22 @@
+<svg version="1.1" viewBox="0 0 1333.3 1333.3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1529" x1="663.84" x2="663.84" y1="993.5" y2="21.213" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#b0002c" offset="0"/>
+   <stop stop-color="#ff0054" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1537" x1="663.84" x2="663.84" y1="990.59" y2="21.213" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#550015" offset="0"/>
+   <stop offset="1"/>
+  </linearGradient>
+  <mask id="mask6500" maskUnits="userSpaceOnUse">
+   <g transform="translate(1784.8 -645.17)">
+    <rect x="-1790.5" y="635.6" width="1344.6" height="1341.8" fill="#fff"/>
+    <rect transform="rotate(-45)" x="-1889.9" y="-42.276" width="350.94" height="350.94" fill="none" stroke="#000" stroke-width="120"/>
+   </g>
+  </mask>
+ </defs>
+ <g transform="translate(-1.9023e-5 5.3331)" mask="url(#mask6500)">
+  <path transform="matrix(1.1937 0 0 .68626 -125.77 -20.557)" d="m1225.3 993.63h-561.43-561.43l561.43-972.42 280.71 486.21z" fill="url(#linearGradient1529)"/>
+  <path transform="matrix(-1.1937 0 0 -.68626 1459.1 1343.2)" d="m1225.3 993.63h-561.43-561.43l561.43-972.42 280.71 486.21z" fill="url(#linearGradient1537)"/>
+ </g>
+</svg>
