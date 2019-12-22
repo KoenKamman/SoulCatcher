@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron:start": "ng build --prod --watch --outputPath=electron/app"
+    "electron:start": "ng build --prod --outputPath=electron/app && cd electron && npm run start"
   },
   "private": true,
   "dependencies": {

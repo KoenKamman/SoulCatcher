@@ -1,12 +1,22 @@
+<div class="draggable-area" [class.draggable-area-maximized]="maximized"></div>
 <div class="container" fxLayout="row">
     <div class="logo-container" fxFlex>
-        <div class="logo"><div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        <div class="logo">
+            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        </div>
     </div>
     <div class="window-controls" fxLayout="row" fxLayoutAlign="end" fxFlex>
-        <div class="btn"><div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div></div>
-        <div class="btn"><div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div></div>
-        <div class="btn"><div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div></div>
-        <div class="btn"><div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div></div>
+        <div class="btn" (click)="sendControlEvent('minimize-window')">
+            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        </div>
+        <div class="btn" (click)="sendControlEvent('maximize-window')" *ngIf="!maximized">
+            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        </div>
+        <div class="btn" (click)="sendControlEvent('restore-window')" *ngIf="maximized">
+            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        </div>
+        <div class="btn close-btn" (click)="sendControlEvent('close-window')">
+            <div class="icon" [inlineSVG]="'/assets/icons/close_icon.svg'"></div>
+        </div>
     </div>
 </div>
-<div class="draggable-area" [class.draggable-area-maximized]="maximized"></div>

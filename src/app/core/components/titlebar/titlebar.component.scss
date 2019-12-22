@@ -40,11 +40,16 @@ $icon-padding: 7px;
 .btn {
     height: $titlebar-height;
     width: $titlebar-height;
+    -webkit-app-region: no-drag;
     z-index: 1000;
 
     &:hover {
         background-color: lighten($titlebar-color, 10%);
     }
+}
+
+.close-btn:hover {
+    background-color: rgb(255, 0, 0);
 }
 
 .icon {

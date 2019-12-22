@@ -54,3 +54,16 @@ app.on('web-contents-created', (eventa, contents) => {
     eventb.preventDefault();
   });
 });
+
+ipcMain.on('minimize-window', () => {
+  win?.minimize();
+});
+ipcMain.on('maximize-window', () => {
+  win?.maximize();
+});
+ipcMain.on('restore-window', () => {
+  win?.restore();
+});
+ipcMain.on('close-window', () => {
+  win?.close();
+});

@@ -20,4 +20,8 @@ export class TitlebarComponent implements OnInit {
     });
   }
 
+  public sendControlEvent(event: string): void {
+    this.ipcService.send(event);
+  }
+
 }
