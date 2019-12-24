@@ -9,10 +9,15 @@
   "author": "Koen Kamman",
   "license": "MIT",
   "devDependencies": {
+    "@types/steamid": "^1.1.0",
+    "@types/winreg": "^1.2.30",
     "electron": "^7.1.5",
     "typescript": "^3.7.3"
   },
   "dependencies": {
-    "chokidar": "^3.3.0"
+    "@node-steam/vdf": "^2.1.0",
+    "chokidar": "^3.3.0",
+    "steamid": "^1.1.3",
+    "winreg": "^1.2.4"
   }
 }

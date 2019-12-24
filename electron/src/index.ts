@@ -1,5 +1,8 @@
-import { app, BrowserWindow, ipcMain, IpcMainEvent } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
+import { DotaServerLog } from './dota-server-log';
+import { ServerInfo } from './models/server-info';
+import { getDotaServerLogPath } from './steam-utils';
 
 let win: BrowserWindow | null;
 
@@ -34,8 +37,17 @@ function createWindow() {
   });
 }
 
-app.on('ready', () => {
+app.on('ready', async () => {
   createWindow();
+  const serverLogPath = await getDotaServerLogPath();
+  if (serverLogPath) {
+    const dotaServerLog = new DotaServerLog(serverLogPath);
+    dotaServerLog.onUpdate((info: ServerInfo) => {
+      win?.webContents.send('server-log-update', info);
+    });
+    dotaServerLog.watch();
+    console.log('Watching server log...');
+  }
 });
 
 app.on('window-all-closed', () => {
