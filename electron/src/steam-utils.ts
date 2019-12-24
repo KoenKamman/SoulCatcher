@@ -44,16 +44,15 @@ export async function getSteamLibraryPaths(steamPath: string): Promise<string[]>
   return steamLibraryPaths;
 }
 
-export async function getDotaServerLogPath(): Promise<string | undefined> {
+export async function getDotaPath(): Promise<string | undefined> {
   const steamPath = await getSteamPath();
   const steamLibraryPaths = await getSteamLibraryPaths(steamPath);
-
-  let serverLogPath: string | undefined;
+  let dotaPath: string | undefined;
   steamLibraryPaths.forEach((libPath: string) => {
-    const fullPath = libPath + '/steamapps/common/dota 2 beta/game/dota/server_log.txt';
+    const fullPath = libPath + '/steamapps/common/dota 2 beta';
     if (fs.existsSync(fullPath)) {
-      serverLogPath = fullPath;
+      dotaPath = fullPath;
     }
   });
-  return serverLogPath;
+  return dotaPath;
 }
